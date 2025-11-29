@@ -1,0 +1,41 @@
+<div class="products">
+  <div class="card">
+    {{#if products.length}}
+      <ul>
+        {{#each products}}
+        <li class="product" data-id="{{id}}">
+          <div>
+            <h3>{{name}} <small class="meta">— ${{price}}</small></h3>
+            <div class="meta">{{description}}</div>
+          </div>
+          <div>
+            <button data-action="delete" data-id="{{id}}">Видалити</button>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <div class="empty">Тут ще немає продуктів</div>
+    {{/if}}
+  </div>
+
+  <aside class="card">
+    <h3>Додати продукт</h3>
+    <label>
+      Назва
+      <input id="p-name" />
+    </label>
+    <label>
+      Ціна
+      <input id="p-price" type="number" />
+    </label>
+    <label>
+      Опис
+      <textarea id="p-desc"></textarea>
+    </label>
+    <div class="form-row">
+      <button id="add-product">Додати</button>
+      <button id="reset" type="button">Очистити</button>
+    </div>
+  </aside>
+</div>

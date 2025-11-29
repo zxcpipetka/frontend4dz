@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bookmarks & Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container" id="bookmarkApp">
+    <h1>Закладки</h1>
+    <input type="text" id="bookmarkInput" placeholder="URL (наприклад https://example.com)">
+    <div style="display:flex;gap:8px;justify-content:center">
+      <button id="addBookmarkBtn">Додати</button>
+      <button id="clearBookmarksBtn" class="delete">Очистити всі</button>
+    </div>
+    <ul id="bookmarkList"></ul>
+  </div>
+
+  <div class="container" id="formApp">
+    <h1>Форма</h1>
+    <input type="text" id="username" placeholder="Логін">
+    <input type="password" id="password" placeholder="Пароль">
+    <button id="saveBtn">Зберегти</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

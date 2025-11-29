@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DZ3 — Lazy Loading Images</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+        padding: 20px;
+        background: #fff;
+        color: #222;
+      }
+
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .controls {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      button {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background: #f6f6f6;
+        cursor: pointer;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid #eee;
+        border-radius: 6px;
+        overflow: hidden;
+        background: #fafafa;
+      }
+
+      /* Стандартний стиль для img: забезпечує мінімальну висоту та фон */
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        background-color: #f0f0f0; /* видимий фон до завантаження */
+        opacity: 0; /* спочатку приховане */
+        transition: opacity 360ms ease, filter 360ms ease;
+        filter: blur(6px);
+      }
+
+      /* Клас додається після завантаження, щоб проявити зображення */
+      .card img.loaded {
+        opacity: 1;
+        filter: blur(0);
+      }
+
+      .caption {
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Lazy Loading Images (IntersectionObserver)</h1>
+
+      <div class="controls">
+        <button id="load-all">Load All Images</button>
+        <div>Завантаження відбувається тільки коли зображення стає видимим.</div>
+      </div>
+
+      <div class="gallery">
+        <div class="card">
+          <img data-src="https://picsum.photos/id/1018/1000/600.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Photo 1" />
+          <div class="caption">Photo 1 — high-res</div>
+        </div>
+        <div class="card">
+          <img data-src="https://picsum.photos/id/1025/1000/600.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Photo 2" />
+          <div class="caption">Photo 2 — high-res</div>
+        </div>
+        <div class="card">
+          <img data-src="https://picsum.photos/id/1035/1000/600.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Photo 3" />
+          <div class="caption">Photo 3 — high-res</div>
+        </div>
+        <div class="card">
+          <img data-src="https://picsum.photos/id/1043/1000/600.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Photo 4" />
+          <div class="caption">Photo 4 — high-res</div>
+        </div>
+        <div class="card">
+          <img data-src="https://picsum.photos/id/1052/1000/600.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Photo 5" />
+          <div class="caption">Photo 5 — high-res</div>
+        </div>
+        <div class="card">
+          <img data-src="https://picsum.photos/id/1060/1000/600.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="Photo 6" />
+          <div class="caption">Photo 6 — high-res</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dz3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+:root{--accent:#1976d2}
+body{font-family:system-ui,Segoe UI,Roboto,Arial;padding:28px;background:#f7f9fc}
+main{max-width:920px;margin:0 auto;background:#fff;padding:22px;border-radius:10px;box-shadow:0 6px 24px rgba(12,22,39,.06)}
+h1{margin:0 0 16px;color:var(--accent)}
+.products{display:grid;grid-template-columns:1fr 320px;gap:20px}
+.card{padding:12px;border-radius:8px;border:1px solid #eee;background:#fff}
+.product{display:flex;justify-content:space-between;align-items:flex-start;padding:12px;border-bottom:1px solid #f0f0f0}
+.product:last-child{border-bottom:none}
+.product h3{margin:0 0 6px;font-size:16px}
+.product .meta{color:#6b6b6b;font-size:13px}
+button{padding:8px 10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.form-row{display:flex;gap:8px;margin-top:8px}
+input, textarea{padding:8px;border-radius:6px;border:1px solid #ddd;width:100%}
+textarea{height:70px;resize:vertical}
+.empty{padding:20px;text-align:center;color:#777}

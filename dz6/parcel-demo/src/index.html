@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Parcel demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Parcel demo — модулі + import/export</h1>
+
+      <section id="app">
+        <div>Привіт, <span id="name">гість</span>!</div>
+        <div style="margin-top:12px">
+          <input id="nameInput" placeholder="Введи ім'я" />
+          <button id="greet">Привітати</button>
+        </div>
+        <p id="message" style="margin-top:12px;color:#444"></p>
+      </section>
+
+      <p style="margin-top:22px;color:#666;font-size:14px">Це маленький приклад: код розділений на модулі, збирається Parcel.</p>
+    </main>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

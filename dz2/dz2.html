@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="uk">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>DZ2 — Slider & Mouse debounce</title>
+		<style>
+			body {
+				font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+				padding: 20px;
+				background: #fafafa;
+			}
+
+			.slider {
+				max-width: 400px;
+				margin: 0 auto 30px;
+				text-align: center;
+			}
+
+			.slider__input {
+				width: 100%;
+			}
+
+			.slider__image {
+				display: block;
+				margin: 20px auto;
+				max-width: 100%;
+				transition: transform 120ms ease;
+			}
+
+			#box-wrap {
+				height: 60vh;
+				border: 1px dashed #ddd;
+				margin: 20px auto;
+				max-width: 800px;
+				position: relative;
+			}
+
+			#box {
+				width: 50px;
+				height: 50px;
+				background-color: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transform: translate(0, 0);
+				transition: transform 120ms ease;
+				pointer-events: none;
+			}
+
+			.hint {
+				text-align: center;
+				color: #444;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Завдання 1 — Слайдер з debounce</h2>
+		<div class="slider">
+			<input type="range" min="1" max="100" value="50" class="slider__input js-slider" />
+			<img src="https://via.placeholder.com/300x300" class="slider__image js-slider-image" alt="Preview" />
+			<div class="hint">Значення: <span class="js-slider-value">50</span></div>
+		</div>
+
+		<h2>Завдання 2 — Рух об'єкта за мишкою (debounce)</h2>
+		<div id="box-wrap" class="js-box-wrap">
+			<div id="box" class="js-box"></div>
+		</div>
+
+		<p class="hint">Переміщайте мишку у блоці — об'єкт плавно слідує (debounce + CSS transition).</p>
+
+		<!-- lodash для debounce -->
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+		<script src="dz2.js"></script>
+	</body>
+</html>
